@@ -23,6 +23,7 @@ Elite::RGBColor Material_CookTorrance::Shade(const HitRecord& hitPoint, const El
 {
 	const Elite::FVector3 halfVect = Elite::GetNormalized(viewDir + lightDir);
 	const Elite::RGBColor cookTorranceBRDF = BRDF::CookTorrance(m_F0, m_Roughness, m_Metalness, lightDir, viewDir, hitPoint.normal, halfVect);
+
 	Elite::RGBColor kd{ 0.f,0.f,0.f };
 	if (m_Metalness == false)
 		kd =(Elite::RGBColor(1, 1, 1) - BRDF::Fresnel(halfVect, viewDir, m_F0));

@@ -31,6 +31,7 @@ void Camera::Update(float deltaTime)
 	{
 		MoveBackward(deltaTime);
 	}
+
 	if (pStates[SDL_SCANCODE_E])
 	{
 		MoveUp(deltaTime);
@@ -39,6 +40,7 @@ void Camera::Update(float deltaTime)
 	{
 		MoveDown(deltaTime);
 	}
+
 	if (pStates[SDL_SCANCODE_A])
 	{
 		MoveLeft(deltaTime);

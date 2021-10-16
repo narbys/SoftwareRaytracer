@@ -38,6 +38,7 @@ namespace BRDF
 	{
 		return (color * reflectance) / float(E_PI);
 	}
+
 	const Elite::RGBColor BRDF::Lambert(const Elite::RGBColor& reflectance, const Elite::RGBColor& color)
 	{
 		return (color * reflectance) / float(E_PI);

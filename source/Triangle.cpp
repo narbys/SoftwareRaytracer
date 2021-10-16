@@ -101,14 +101,17 @@ bool Triangle::Hit(const Ray& ray, HitRecord& hitRec, bool shading) const
 		return false;
 
 	const Elite::FPoint3 p = ray.origin + t * viewDir;
+
 	const Elite::FVector3 edgeA = m_V1.xyz - m_V0.xyz;
 	Elite::FVector3 pointToSide = p - m_V0.xyz;
 	if (Elite::Dot(m_Normal, Elite::Cross(edgeA, pointToSide)) < 0)
 		return false;
+
 	const Elite::FVector3 edgeB = m_V2.xyz - m_V1.xyz;
 	pointToSide = p - m_V1.xyz;
 	if (Elite::Dot(m_Normal, Elite::Cross(edgeB, pointToSide)) < 0)
 		return false;
+
 	const Elite::FVector3 edgeC = m_V0.xyz - m_V2.xyz;
 	pointToSide = p - m_V2.xyz;
 	if (Elite::Dot(m_Normal, Elite::Cross(edgeC, pointToSide)) < 0)
